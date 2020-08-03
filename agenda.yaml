@@ -1,8 +1,8 @@
 # Add repo URLs for labs in this format
 repos:
-    - url: URL TO REPO
-    - url: SECOND URL TO REPO
-      branch: BRANCH TO CHECK OUT (OPTIONAL)
+    - url: https://github.com/remkohdev/docker101
+    - url: https://github.com/remkohdev/kube101
+    - url: https://github.com/remkohdev/helm101
         
 
 

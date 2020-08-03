@@ -1,2 +1,6 @@
 # Add repo URLs for labs in this file with no blank lines
-https://github.com/IBM/docker101
+
+```
+    - url: https://github.com/IBM/docker101
+      branch: BRANCH TO CHECK OUT (OPTIONAL)
+```
