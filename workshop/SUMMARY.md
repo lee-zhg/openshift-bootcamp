@@ -4,14 +4,11 @@
 <!-- All headings MUST be THREE hashmarks (###) -->
 <!-- Indented bullets (4 spaces) will make the first line be a section -->
 
-### Getting Started
-
-* [Pre-work](pre-work/README.md)
-
 ### Setup
 
-* [Cloud Shell Setup Instructions](pre-work/README.md)
-* [Access IBM Skills Network](pre-work/skillsNetwork.md)
+* [IBM Account](generatedContent/workshop-setup/pre-work/NEWACCOUNT.md)
+* [Client CLI](generatedContent/workshop-setup/pre-work/COGNITIVECLASS.md)
+* [OpenShift](generatedContent/workshop-setup/pre-work/ROKS.md)
 
 ### Day 1
  
