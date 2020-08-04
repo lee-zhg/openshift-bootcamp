@@ -1,4 +1,26 @@
 THIS FILE CONTAINS ALL THE SUMMARY.MDs OF THE GENERATED CONTENT PREFIXED WITH RIGHT PATH ("generatedContent") SO THAT YOU CAN COPY AND PASTE THIS INTO THE PARENT SUMMARY.MD###############################
+##  SUMMARY.md for workshop-setup
+################################
+
+# Home Page for Gitbook 
+* [workshop-setup](generatedContent/workshop-setup/README.md)
+
+# Summary
+
+### Getting Started
+
+* [Pre-work](generatedContent/workshop-setup/pre-work/README.md)
+
+### Workshop Resources
+
+* [Workshops](generatedContent/workshop-setup/https://ibm-developer.gitbook.io/workshops/)
+
+### Resources
+
+* [IBM Developer](generatedContent/workshop-setup/https://developer.ibm.com)
+
+
+###############################
 ##  SUMMARY.md for docker101
 ################################
 

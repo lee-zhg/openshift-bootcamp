@@ -4,3 +4,12 @@
     - url: https://github.com/IBM/docker101
       branch: BRANCH TO CHECK OUT (OPTIONAL)
 ```
+
+    - url: https://github.com/remkohdev/workshop-setup
+      branch: roks-only
+    - url: https://github.com/remkohdev/docker101
+      branch: oc-cli
+    - url: https://github.com/remkohdev/kube101
+      branch: oc-cli
+    - url: https://github.com/remkohdev/helm101
+      branch: oc-cli
