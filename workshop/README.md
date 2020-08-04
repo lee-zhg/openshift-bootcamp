@@ -3,6 +3,7 @@
 ### About this workshop
 
 The OpenShift Bootcamp consists of:
+
 1. Day 1: OpenShift 101 - an Introduction to Kubernetes and OpenShift,
 2. Day 2: OpenShift 201 - advanced topics: Istio, Storage and Operators,
 3. Day 3: OpenShift 202 - DevOps: S2I, Jenkins and OpenShift Pipelines, Multi-Cloud Manager.
