@@ -11,18 +11,18 @@ The OpenShift Bootcamp consists of:
 
 ###  Day 1
 
-|  Topic | Description  |
-| - | - |
-| Welcome, Introductions, Objectives and Setup| - |
-| [Lecture: Overview of Containers](tbd) |  |
-| [Lab: Docker 101](generatedContent/docker101/README.md) | Docker Labs |
-| BREAK | |
-| [Lecture: Overview of Kubernetes](tbd) |  |
-| [Lab: Kubernetes 101](generatedContent/kube101/README.md) | Kubernetes Labs |
-| LUNCH | |
-| [Lecture: Helm](tbd) | Helm Overview Lecture |
-| [Lab: Helm Overview ](generatedContent/helm101/README.md) | Helm Labs 
-| RECAP of Day 1 | |
+| Duration | Topic | Description  |
+| - | - | - |
+| 15 mins | Welcome and Setup | - |
+| 30 mins | [Lecture: Overview of Containers](tbd) | Technical Overview of Containers |
+| 45 mins | [Lab: Docker 101](generatedContent/docker101/README.md) | Docker Labs |
+| 15 mins | BREAK | |
+| 30 mins | [Lecture: Overview of Kubernetes](tbd) | Technical Overview of Kubernetes |
+| 45 mins | [Lab: Kubernetes 101](generatedContent/kube101/README.md) | Kubernetes Labs |
+| 60 mins | LUNCH | |
+| 30 mins | [Lecture: Overview of Helm](tbd) | Technical Overview of Helm |
+| 45 mins | [Lab: Helm Overview ](generatedContent/helm101/README.md) | Helm Labs 
+| 15 mins | RECAP of Day 1 | |
 
 ## Compatibility
 
