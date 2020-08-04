@@ -18,16 +18,17 @@ The OpenShift Bootcamp consists of:
 6. oc CLI,
 7. helm CLI,
 8. Check access to the following domains via the browser:
-   1. cloud.ibm.com
-   2. developer.ibm.com
-   3. cognitiveclass.ai
-   4. labs.cognitiveclass.ai
-   5. containers.appdomain.cloud
-   6. ibm-developer.gitbook.io
-   7. github.com
-   8. HTTPS
-   9. HTTP
-   10. box.com
+    1. https://cloud.ibm.com/
+    1. https://developer.ibm.com/
+    1. https://cognitiveclass.ai/
+    1. https://labs.cognitiveclass.ai/
+    containers.appdomain.cloud, e.g. https://cloud.ibm.com/kubernetes/clusters/bsgefp9d0g004bbc3g70/overview?region=us-south&resourceGroup=fdd290732f7d47909181a189494e2990
+    1. ibm-developer.gitbook.io, e.g. https://ibm-developer.gitbook.io/openshift-bootcamp/v/workshop-openshift101/
+    1. https://github.com/
+    1. https://hub.docker.com/
+    1. HTTPS, e.g. https://cloud.ibm.com/
+    1. HTTP, e.g. http://info.cern.ch/
+    1. box.com, e.g. https://ibm.box.com/s/046mume8k39f0s6jv6g9jf8kvuv2ba1k
 
 ## Agenda
 
