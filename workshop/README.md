@@ -22,7 +22,7 @@ The OpenShift Bootcamp consists of:
     1. https://developer.ibm.com/
     1. https://cognitiveclass.ai/
     1. https://labs.cognitiveclass.ai/
-    containers.appdomain.cloud, e.g. https://cloud.ibm.com/kubernetes/clusters/bsgefp9d0g004bbc3g70/overview?region=us-south&resourceGroup=fdd290732f7d47909181a189494e2990
+    1. containers.appdomain.cloud, e.g. https://cloud.ibm.com/kubernetes/clusters/bsgefp9d0g004bbc3g70/overview?region=us-south&resourceGroup=fdd290732f7d47909181a189494e2990
     1. ibm-developer.gitbook.io, e.g. https://ibm-developer.gitbook.io/openshift-bootcamp/v/workshop-openshift101/
     1. https://github.com/
     1. https://hub.docker.com/
