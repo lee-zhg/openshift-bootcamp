@@ -35,18 +35,18 @@ The OpenShift Bootcamp consists of:
 
 ###  Day 1
 
-| Duration | Topic | Description  |
-| - | - | - |
-| 15 mins | Welcome and Setup | - |
-| 30 mins | [Lecture: Overview of Containers](tbd) | Technical Overview of Containers |
-| 45 mins | [Lab: Docker 101](generatedContent/docker101/README.md) | Docker Labs |
-| 15 mins | BREAK | |
-| 30 mins | [Lecture: Overview of Kubernetes](tbd) | Technical Overview of Kubernetes |
-| 45 mins | [Lab: Kubernetes 101](generatedContent/kube101/README.md) | Kubernetes Labs |
-| 60 mins | LUNCH | |
-| 30 mins | [Lecture: Overview of Helm](tbd) | Technical Overview of Helm |
-| 45 mins | [Lab: Helm Overview ](generatedContent/helm101/README.md) | Helm Labs 
-| 15 mins | RECAP of Day 1 | |
+| Duration | Topic | Description | Instructor |
+| - | - | - | - |
+| 15 mins | Welcome and Setup | - | Remko |
+| 30 mins | [Lecture: Overview of Containers](tbd) | Technical Overview of Containers | Remko |
+| 45 mins | [Lab: Docker 101](generatedContent/docker101/README.md) | Docker Labs | Remko |
+| 15 mins | BREAK | | |
+| 30 mins | [Lecture: Overview of Kubernetes](tbd) | Technical Overview of Kubernetes | Oliver |
+| 45 mins | [Lab: Kubernetes 101](generatedContent/kube101/README.md) | Kubernetes Labs | Oliver |
+| 60 mins | LUNCH | | |
+| 30 mins | [Lecture: Overview of Helm](tbd) | Technical Overview of Helm | Lee |
+| 45 mins | [Lab: Helm Overview ](generatedContent/helm101/README.md) | Helm Labs | Lee |
+| 15 mins | RECAP of Day 1 | Remko |
 
 ## Compatibility
 
