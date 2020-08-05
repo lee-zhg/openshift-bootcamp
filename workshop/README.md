@@ -46,7 +46,7 @@ The OpenShift Bootcamp consists of:
 | 60 mins | LUNCH | | |
 | 30 mins | [Lecture: Overview of Helm](tbd) | Technical Overview of Helm | Lee |
 | 45 mins | [Lab: Helm Overview ](generatedContent/helm101/README.md) | Helm Labs | Lee |
-| 15 mins | RECAP of Day 1 | Remko |
+| 15 mins | RECAP of Day 1 | | Remko |
 
 ## Compatibility
 
