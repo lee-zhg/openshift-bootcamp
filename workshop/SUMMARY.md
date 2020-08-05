@@ -1,21 +1,17 @@
 # Summary
 
-<!-- Rules of SUMMARY.md are here: https://docs.gitbook.com/integrations/github/content-configuration#summary -->
-<!-- All headings MUST be THREE hashmarks (###) -->
-<!-- Indented bullets (4 spaces) will make the first line be a section -->
-
 ### Setup
 
-* [IBM Account](generatedContent/workshop-setup/pre-work/NEWACCOUNT.md)
-* [Client CLI](generatedContent/workshop-setup/pre-work/COGNITIVECLASS.md)
-* [OpenShift](generatedContent/workshop-setup/pre-work/ROKS.md)
+* [1. IBM Account](generatedContent/workshop-setup/pre-work/NEWACCOUNT.md)
+* [2. Client CLI](generatedContent/workshop-setup/pre-work/COGNITIVECLASS.md)
+* [3. Grant Cluster](generatedContent/workshop-setup/pre-work/GRANTCLUSTER.md)
+* [4. OpenShift](generatedContent/workshop-setup/pre-work/ROKS.md)
 
 ### Day 1
  
 * [Lab: Docker 101](generatedContent/docker101/README.md)
     * [Excercise - 1](generatedContent/docker101/lab-1/README.md)
     * [Excercise - 2](generatedContent/docker101/lab-2/README.md)
-    * [Excercise - 3](generatedContent/docker101/lab-3/README.md)
 
 * [Lab: OpenShift 101](generatedContent/kube101/README.md)
     * [Excercise - 1](generatedContent/kube101/Lab1/README.md)
