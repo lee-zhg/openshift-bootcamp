@@ -24,6 +24,18 @@
     * [Lab 3 - Revisions](generatedContent/helm101/Lab3/README.md)
     * [Lab 4 - Helm Repositories](generatedContent/helm101/Lab4/README.md)
 
+### Day 2
+
+* Lab: Istio
+* Lab: Kubernetes Storage
+* Lab: Operators
+
+### Day 3
+
+* Lab: Source-to-Image (S2I)
+* Lab: Pipelines
+* Lab: Multi-Cloud Manager
+
 ### Workshop Resources
 
 * [Instructor Guide](admin-guide/README.md)
