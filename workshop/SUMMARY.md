@@ -37,9 +37,7 @@
 
 * [Lab: OpenShift Storage 101](generatedContent/ddc-cloud-native-security-labs/README.md)
     * [Excercise - 1](generatedContent/ddc-cloud-native-security-labs/lab-00/README.md)
-    * [Excercise - 2](generatedContent/ddc-cloud-native-security-labs/lab-01/README.md)
-    * [Excercise - 3](generatedContent/ddc-cloud-native-security-labs/lab-02/README.md)
-    * [Excercise - 4](generatedContent/ddc-cloud-native-security-labs/lab-03/README.md)
+    * [Excercise - 2](generatedContent/ddc-cloud-native-security-labs/lab-02/README.md)
 
 * [Lab: Operators 101](generatedContent/kubernetes-extensions/README.md)
 
