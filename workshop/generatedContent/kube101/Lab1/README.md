@@ -62,7 +62,7 @@ In this part of the lab we will deploy an application called `guestbook` that ha
    10.189.80.113   Ready    master,worker   10d   v1.16.2+283af84   10.189.80.113   169.60.111.164   Red Hat    3.10.0-1127.13.1.el7.x86_64   cri-o://1.16.6-17.rhaos4.3.git4936f44.el7
    ```
 
-2. Now that you have both the address and the port, you can now access the application in the web browser
+1. Now that you have both the address and the port, you can now access the application in the web browser
    at `<EXTERNAL-IP>:<nodeport>`. In the example case this is `169.60.111.167:31208`.
 
 Congratulations, you've now deployed an application to Kubernetes!
