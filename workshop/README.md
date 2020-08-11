@@ -56,11 +56,11 @@ The OpenShift Bootcamp consists of:
 | 30 mins | Lecture: Overview of Istio | Technical Overview of Istio | |
 | 45 mins | Lab: Istio 201 | Istio Labs | |
 | 15 mins | BREAK | | |
-| 30 mins | Lecture: Overview of Kubernetes Storage | Technical Overview of Storage on Kubernetes | |
-| 45 mins | Lab: Secure Object Storage on OpenShift | Secure Storage Lab using Cloud Object Storage and S3FS-Fuse | |
+| 30 mins | Lecture: Overview of Kubernetes Storage | Technical Overview of Storage on Kubernetes | Remko |
+| 45 mins | Lab: Secure Object Storage on OpenShift | Secure Storage Lab using Cloud Object Storage and S3FS-Fuse | Remko |
 | 60 mins | LUNCH | | |
-| 30 mins | Lecture: Overview of Kubernetes Extensions | Technical Overview of Kubernetes Extensions | |
-| 45 mins | Lab: Custom Resource and Operators |  Labs | Lee |
+| 30 mins | Lecture: Overview of Kubernetes Extensions | Technical Overview of Kubernetes Extensions | Rojan |
+| 45 mins | Lab: Custom Resource and Operators |  Labs | Rojan |
 | 15 mins | RECAP of Day 1 | | Remko |
 
 ###  Day 3
@@ -68,14 +68,14 @@ The OpenShift Bootcamp consists of:
 | Duration | Topic | Description | Instructor |
 | - | - | - | - |
 | 15 mins | Welcome | - | Remko |
-| 30 mins | Lecture: CI/CD for Microservices | Overview of DevOps Strategies on OpenShift | |
-| 45 mins | Lab: Source-to-Image (S2I) | Docker Labs | |
+| 30 mins | Lecture: CI/CD for Microservices | Overview of DevOps Strategies on OpenShift | Oliver |
+| 45 mins | Lab: Source-to-Image (S2I) | Docker Labs | Oliver |
 | 15 mins | BREAK | | |
-| 15 mins | Lecture: Overview of Build Strategies on OpenShift | Technical Overview of Jenkins and OpenShift Build Strategies | |
-| 45 mins | Lab: From Jenkins Pipelines to OpenShift Pipelines | Pipelines Labs | |
+| 15 mins | Lecture: Overview of Build Strategies on OpenShift | Technical Overview of Jenkins and OpenShift Build Strategies | Remko |
+| 45 mins | Lab: From Jenkins Pipelines to OpenShift Pipelines | Pipelines Labs | Remko |
 | 60 mins | LUNCH | | |
 | 60 mins | Lecture: Cloud Pak for Multi-Cloud Manager (CP4MCM) | Technical Overview of CP4MCM, Policy Governance and Compliance on Hybrid Cloud | |
-| mins | Optional Lab or Lecture | TBD, CP4Integration, CP4Data | |
+| mins | Optional Lab or Lecture | TBD, CP4Integration, CP4Data | TBD |
 | 15 mins | RECAP of Day 1 | | Remko |
 
 ## Compatibility

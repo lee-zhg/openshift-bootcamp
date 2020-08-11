@@ -19,22 +19,41 @@
     * [Excercise - 3](generatedContent/kube101/Lab3/README.md)
 
 * [Lab: Helm 101](generatedContent/helm101/README.md)
-    * [Lab 1 - Deploy Application](generatedContent/helm101/Lab1/README.md)
-    * [Lab 2 - Update Application](generatedContent/helm101/Lab2/README.md)
-    * [Lab 3 - Revisions](generatedContent/helm101/Lab3/README.md)
-    * [Lab 4 - Helm Repositories](generatedContent/helm101/Lab4/README.md)
+    * [Excercise - 1 - Deploy Application](generatedContent/helm101/Lab1/README.md)
+    * [Excercise - 2 - Update Application](generatedContent/helm101/Lab2/README.md)
+    * [Excercise - 3 - Revisions](generatedContent/helm101/Lab3/README.md)
+    * [Excercise - 4 - Helm Repositories](generatedContent/helm101/Lab4/README.md)
 
 ### Day 2
 
-* Lab: Istio
-* Lab: Kubernetes Storage
-* Lab: Operators
+* [Lab: Istio 101](generatedContent/istio101/README.md)
+    * [Excercise - 1](generatedContent/istio101/exercise-1/README.md)
+    * [Excercise - 2](generatedContent/istio101/exercise-2/README.md)
+    * [Excercise - 3](generatedContent/istio101/exercise-3/README.md)
+    * [Excercise - 4](generatedContent/istio101/exercise-4/README.md)
+    * [Excercise - 5](generatedContent/istio101/exercise-5/README.md)
+    * [Excercise - 6](generatedContent/istio101/exercise-6/README.md)
+    * [Excercise - 7](generatedContent/istio101/exercise-7/README.md)
+
+* [Lab: OpenShift Storage 101](generatedContent/ddc-cloud-native-security-labs/README.md)
+    * [Excercise - 1](generatedContent/ddc-cloud-native-security-labs/lab-00/README.md)
+    * [Excercise - 2](generatedContent/ddc-cloud-native-security-labs/lab-01/README.md)
+    * [Excercise - 3](generatedContent/ddc-cloud-native-security-labs/lab-02/README.md)
+    * [Excercise - 4](generatedContent/ddc-cloud-native-security-labs/lab-03/README.md)
+
+* [Lab: Operators 101](generatedContent/kubernetes-extensions/README.md)
 
 ### Day 3
 
-* Lab: Source-to-Image (S2I)
-* Lab: Pipelines
-* Lab: Multi-Cloud Manager
+* [Lab: Source-to-Image (S2I)](generatedContent/s2i-open-liberty-workshop/README.md)
+
+* [Lab: Jenkins to OpenShift Pipelines](generatedContent/openshift-builds-101/pipeline-build/README.md)
+    * [Excercise - 1](generatedContent/openshift-builds-101/pipeline-build/lab-00/README.md)
+    * [Excercise - 2](generatedContent/openshift-builds-101/pipeline-build/lab-01/README.md)
+    * [Excercise - 3](generatedContent/openshift-builds-101/pipeline-build/lab-02/README.md)
+
+
+* Demo: Multi-Cloud Manager
 
 ### Workshop Resources
 
