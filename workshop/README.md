@@ -74,8 +74,7 @@ The OpenShift Bootcamp consists of:
 | 15 mins | Lecture: Overview of Build Strategies on OpenShift | Technical Overview of Jenkins and OpenShift Build Strategies | Remko |
 | 45 mins | Lab: From Jenkins Pipelines to OpenShift Pipelines | Pipelines Labs | Remko |
 | 60 mins | LUNCH | | |
-| 60 mins | Lecture: Cloud Pak for Multi-Cloud Manager (CP4MCM) | Technical Overview of CP4MCM, Policy Governance and Compliance on Hybrid Cloud | |
-| mins | Optional Lab or Lecture | TBD, CP4Integration, CP4Data | TBD |
+| 60 mins | Demo: OpenShift Policy and Compliance | Policy, Governance and Compliance with Cloud Pak for Multi-Cloud Manager | |
 | 15 mins | RECAP of Day 1 | | Remko |
 
 ## Compatibility
