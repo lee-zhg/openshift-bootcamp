@@ -9,7 +9,8 @@ repos:
     - url: https://github.com/remkohdev/helm101
       branch: oc-cli
     - url: https://github.com/IBM/istio101
-    - url: https://github.com/remkohdev/kubernetes-storage 
+    - url: https://github.com/remkohdev/kubernetes-storage
+      branch: roks43
     - url: https://github.com/remkohdev/kubernetes-extensions 
     - url: https://github.com/IBM/s2i-open-liberty-workshop
     - url: https://github.com/remkohdev/openshift-builds-101
