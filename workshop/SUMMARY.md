@@ -36,8 +36,7 @@
     * [Excercise - 7](generatedContent/istio101/exercise-7/README.md)
 
 * [Lab: OpenShift Storage 101](generatedContent/ddc-cloud-native-security-labs/README.md)
-    * [Excercise - 1](generatedContent/ddc-cloud-native-security-labs/lab-00/README.md)
-    * [Excercise - 2](generatedContent/ddc-cloud-native-security-labs/lab-02/README.md)
+    * [Excercise - 1](generatedContent/kubernetes-storage/cos-with-s3fs/README.md)
 
 * [Lab: Operators 101](generatedContent/kubernetes-extensions/README.md)
 
