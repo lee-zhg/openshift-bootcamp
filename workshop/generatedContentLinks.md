@@ -127,36 +127,34 @@ THIS FILE CONTAINS ALL THE SUMMARY.MDs OF THE GENERATED CONTENT PREFIXED WITH RI
 
 
 ###############################
-##  SUMMARY.md for ddc-cloud-native-security-labs
+##  SUMMARY.md for kubernetes-storage
 ################################
 
 # Home Page for Gitbook 
-* [ddc-cloud-native-security-labs](generatedContent/ddc-cloud-native-security-labs/README.md)
+* [kubernetes-storage](generatedContent/kubernetes-storage/README.md)
 
 # Summary
 
+<!-- Rules of SUMMARY.md are here: https://docs.gitbook.com/integrations/github/content-configuration#summary -->
+<!-- All headings MUST be THREE hashmarks (###) -->
+<!-- Indented bullets (4 spaces) will make the first line be a section -->
+
 ### Getting Started
 
-* [Create an IBM Cloud account](generatedContent/ddc-cloud-native-security-labs/lab-00/NEWACCOUNT.md)
-* [Setup](generatedContent/ddc-cloud-native-security-labs/lab-00/README.md)
+* [Pre-work](generatedContent/kubernetes-storage/pre-work/README.md)
 
-### Workshop
+### Some Heading
 
-* [Lab0 - Setup](generatedContent/ddc-cloud-native-security-labs/lab-00/README.md)
-* [Lab1 - Kubernetes Networking](generatedContent/ddc-cloud-native-security-labs/lab-01/README.md)
-* [Lab2 - Adding Secure Storage](generatedContent/ddc-cloud-native-security-labs/lab-02/README.md)
-* [Lab3 - Source-to-Image (S2I)](generatedContent/ddc-cloud-native-security-labs/lab-03/README.md)
+* [Some Section](generatedContent/kubernetes-storage/some-section/README.md)
+    * [Some Exercise](generatedContent/kubernetes-storage/some-exercise/README.md)
+
+### Workshop Resources
+
+* [Instructor Guide](generatedContent/kubernetes-storage/admin-guide/README.md)
 
 ### Resources
 
-- [Cloud Native Computing Foundation](generatedContent/ddc-cloud-native-security-labs/https://www.cncf.io/)
-- [Cloud Native Security Conference](generatedContent/ddc-cloud-native-security-labs/https://developer.ibm.com/conferences/digital-developer-conference-security/)
-- [IBM Developer](generatedContent/ddc-cloud-native-security-labs/https://developer.ibm.com)
-
-
-### Survey
-
-* [Tell us how we did](generatedContent/ddc-cloud-native-security-labs/http://ibm.biz/workshop-survey-generic)
+* [IBM Developer](generatedContent/kubernetes-storage/https://developer.ibm.com)
 
 
 ###############################
