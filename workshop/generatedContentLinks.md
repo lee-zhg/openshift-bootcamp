@@ -167,6 +167,15 @@ THIS FILE CONTAINS ALL THE SUMMARY.MDs OF THE GENERATED CONTENT PREFIXED WITH RI
 
 
 ###############################
+##  SUMMARY.md for guestbook-helm-operator
+################################
+
+# Home Page for Gitbook 
+* [guestbook-helm-operator](generatedContent/guestbook-helm-operator/README.md)
+
+
+
+###############################
 ##  SUMMARY.md for s2i-open-liberty-workshop
 ################################
 

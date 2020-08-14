@@ -35,11 +35,13 @@
     * [Excercise - 6](generatedContent/istio101/exercise-6/README.md)
     * [Excercise - 7](generatedContent/istio101/exercise-7/README.md)
 
-* [Lab: OpenShift Storage 101](generatedContent/ddc-cloud-native-security-labs/README.md)
+* Lab: OpenShift Storage
     * [Excercise - 1](generatedContent/kubernetes-storage/cos-with-s3fs/README.md)
 
-* [Lab: Operators 101](generatedContent/kubernetes-extensions/README.md)
-
+* Lab: Operators 101
+    * [Exercise - 1](generatedContent/guestbook-helm-operator/README.md)
+    * [Exercise - 2](generatedContent/kubernetes-extensions/README.md)
+  
 ### Day 3
 
 * [Lab: Source-to-Image (S2I)](generatedContent/s2i-open-liberty-workshop/README.md)
