@@ -54,13 +54,13 @@ The OpenShift Bootcamp consists of:
 | - | - | - | - |
 | 15 mins | Welcome | - | Remko |
 | 30 mins | Lecture: Overview of Istio | Technical Overview of Istio | |
-| 45 mins | Lab: Istio 201 | Istio Labs | |
+| 45 mins | [Lab: Istio 201](generatedContent/istio101/README.md) | Istio Labs | |
 | 15 mins | BREAK | | |
 | 30 mins | Lecture: Overview of Kubernetes Storage | Technical Overview of Storage on Kubernetes | Remko |
-| 45 mins | Lab: Secure Object Storage on OpenShift | Secure Storage Lab using Cloud Object Storage and S3FS-Fuse | Remko |
+| 45 mins | [Lab: Secure Object Storage on OpenShift](generatedContent/kubernetes-storage/README.md) | Secure Storage Lab using Cloud Object Storage and S3FS-Fuse | Remko |
 | 60 mins | LUNCH | | |
 | 30 mins | Lecture: Overview of Kubernetes Extensions | Technical Overview of Kubernetes Extensions | Rojan |
-| 45 mins | Lab: Creating Operators from Helm Charts |  Labs | Rojan |
+| 45 mins | [Lab: Creating Operators from Helm Charts](generatedContent/guestbook-helm-operator/README.md) |  Labs | Rojan |
 | 15 mins | RECAP of Day 1 | | Remko |
 
 ###  Day 3
@@ -69,7 +69,7 @@ The OpenShift Bootcamp consists of:
 | - | - | - | - |
 | 15 mins | Welcome | - | Remko |
 | 30 mins | Lecture: CI/CD for Microservices | Overview of DevOps Strategies on OpenShift | Oliver |
-| 45 mins | Lab: Source-to-Image (S2I) | Docker Labs | Oliver |
+| 45 mins | [Lab: Source-to-Image (S2I)](generatedContent/s2i-open-liberty-workshop/README.md) | Docker Labs | Oliver |
 | 15 mins | BREAK | | |
 | 15 mins | Lecture: Overview of Build Strategies on OpenShift | Technical Overview of Jenkins and OpenShift Build Strategies | Remko |
 | 45 mins | Lab: From Jenkins Pipelines to OpenShift Pipelines | Pipelines Labs | Remko |
