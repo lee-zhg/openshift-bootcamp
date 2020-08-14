@@ -60,7 +60,7 @@ The OpenShift Bootcamp consists of:
 | 45 mins | Lab: Secure Object Storage on OpenShift | Secure Storage Lab using Cloud Object Storage and S3FS-Fuse | Remko |
 | 60 mins | LUNCH | | |
 | 30 mins | Lecture: Overview of Kubernetes Extensions | Technical Overview of Kubernetes Extensions | Rojan |
-| 45 mins | Lab: Custom Resource and Operators |  Labs | Rojan |
+| 45 mins | Lab: Creating Operators from Helm Charts |  Labs | Rojan |
 | 15 mins | RECAP of Day 1 | | Remko |
 
 ###  Day 3
