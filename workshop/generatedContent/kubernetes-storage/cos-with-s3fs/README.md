@@ -8,7 +8,7 @@ Before starting the exercise, you need to have
 - an instance of IBM Cloud Object Storage (https://cloud.ibm.com/catalog/services/cloud-object-storage)
 - access to the IBM Cloud Shell,
 
-## Steps
+## Stepshelm install mongodb bitnami/mongodb 
 
 - Create Cloud Object Storage
 - Create MongoDB service
@@ -750,7 +750,7 @@ spec:
     pvc-86d739c4-86c1-4496-ab4e-c077d947acc0   8Gi    RWO    Delete    Bound    remkohdev-project1/my-iks-pvc    ibmc-s3fs-standard-regional    4m26s
     ```
 
-You're now ready to persistly store data on the IBM Cloud Object Storage within your containers in your cluster.
+You're now ready to persist data on the IBM Cloud Object Storage within your containers in your cluster.
 
 
 ## Optional: Add Storage to MongoDB
@@ -834,8 +834,8 @@ In this section, you are going to deploy an instance of MongoDB to your OpenShif
 
     outputs,
 
-    $ ```
-    helm install mongodb bitnami/mongodb --set persistence.enabled=true --set persistence.existingClaim=my-iks-pvc --set livenessProbe.initialDelaySeconds=180 --set auth.rootPassword=passw0rd --set auth.username=user1 --set auth.password=passw0rd --set auth.database=mydb --set service.type=ClusterIP --set podSecurityContext.enabled=true,podSecurityContext.fsGroup=1001060000,containerSecurityContext.enabled=true,containerSecurityContext.runAsUser=1001060000
+    ```
+    $ helm install mongodb bitnami/mongodb --set persistence.enabled=true --set persistence.existingClaim=my-iks-pvc --set livenessProbe.initialDelaySeconds=180 --set auth.rootPassword=passw0rd --set auth.username=user1 --set auth.password=passw0rd --set auth.database=mydb --set service.type=ClusterIP --set podSecurityContext.enabled=true,podSecurityContext.fsGroup=1001060000,containerSecurityContext.enabled=true,containerSecurityContext.runAsUser=1001060000
 
     NAME: mongodb
     LAST DEPLOYED: Sat May 23 21:04:44 2020
