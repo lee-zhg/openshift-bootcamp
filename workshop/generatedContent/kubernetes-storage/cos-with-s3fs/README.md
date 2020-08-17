@@ -757,17 +757,17 @@ You're now ready to persist data on the IBM Cloud Object Storage within your con
 
 ### Deploy MongoDB to Cluster and Persist its Datastore in IBM Cloud Object Storage
 
-In this section, you are going to deploy an instance of MongoDB to your OpenShift cluster and persistly store data on the IBM Cloud Object Storage.
+In this section, you are going to deploy an instance of MongoDB to your OpenShift cluster and persist data on the IBM Cloud Object Storage.
 
 1. We will skip this step, but if you want to configure the MongoDB via a `values.yaml` file, or want to review the default values of the Helm chart, in the `Cloud Shell`, download the default `values.yaml` file from the bitnami/mongodb Helm chart, which is used to configure and deploy the MongoDB Helm chart. In this lab we will overwrite the values from the commandline when we install the chart.
 
     ```
-    $ wget https://raw.githubusercontent.com/bitnami/charts/master/bitnami/mongodb/values.yaml
+    wget https://raw.githubusercontent.com/bitnami/charts/master/bitnami/mongodb/values.yaml
     ```
 
-1. To review the configuration options, open the `values.yaml` file in a file editor and review the parameters that can be modified during mongdb deployment. In this exercise however, you'll overwrite the default values using Helm command parameters instead of a `values.yaml` file.
+2. To review the configuration options, open the `values.yaml` file in a file editor and review the parameters that can be modified during mongdb deployment. In this exercise however, you'll overwrite the default values using Helm command parameters instead of a `values.yaml` file.
 
-1. Add the bitnami Helm repository.
+3. Add the bitnami Helm repository.
 
     ```
     helm repo add bitnami https://charts.bitnami.com/bitnami
@@ -786,13 +786,13 @@ In this section, you are going to deploy an instance of MongoDB to your OpenShif
     Update Complete. ⎈ Happy Helming!⎈
     ```
 
-1. Set a namespace environment variable, `oc project`,
+4. Set a namespace environment variable, `oc project`,
 
     ```
     export NAMESPACE=<your project>
     ```
 
-1. Install MongoDB using helm with parameters, the flag `persistence.enabled=true` will enable storing your data to a PersistentVolume.
+5. Install MongoDB using helm with parameters, the flag `persistence.enabled=true` will enable storing your data to a PersistentVolume.
 
     ```
     oc get project remkohdev-project1 -o yaml
@@ -880,7 +880,7 @@ In this section, you are going to deploy an instance of MongoDB to your OpenShif
     mongodb-c4b99b975-l2k7n   1/1     Running   0          81s
     ```
 
-1. Verify the MongoDB deployment.
+6. Verify the MongoDB deployment.
 
     ```
     $ oc get deployment
@@ -891,7 +891,7 @@ In this section, you are going to deploy an instance of MongoDB to your OpenShif
 
     > Note: It may take several minutes until the deployment is completed and the container initialized, wait till the `READY` state is `1/1`.
 
-1. Verify that pods are running.
+7. Verify that pods are running.
 
     ```
     $ oc get pod
@@ -902,7 +902,7 @@ In this section, you are going to deploy an instance of MongoDB to your OpenShif
 
     > Note: It may take a few minutes until the deployment is completed and pod turns to `Running` state.
 
-1. Knowing the pod identifier now, you can verify the assigned fsGroup and uid of the SCC.
+8. Knowing the pod identifier now, you can verify the assigned fsGroup and uid of the SCC.
 
     ```
     oc get pod -o jsonpath='{range .items[*]}{@.metadata.name}{" runAsUser: "}{@.spec.containers[*].securityContext.runAsUser}{" fsGroup: "}{@.spec.securityContext.fsGroup}{" seLinuxOptions: "}{@.spec.securityContext.seLinuxOptions.level}{"\n"}{end}'
@@ -916,9 +916,9 @@ In this section, you are going to deploy an instance of MongoDB to your OpenShif
     mongodb-c4b99b975-l2k7n runAsUser: 1001060000 fsGroup: 1001060000 seLinuxOptions: s0:c33,c2
     ```
 
-1. Note, the service type for MongoDB is set to `ClusterIP` with the Helm parameter `--set service.type=ClusterIP`, so that MongoDB can only be accessed within the cluster.
+9. Note, the service type for MongoDB is set to `ClusterIP` with the Helm parameter `--set service.type=ClusterIP`, so that MongoDB can only be accessed within the cluster.
 
-1. Retrieve and save MongoDB passwords in environment variables.
+10. Retrieve and save MongoDB passwords in environment variables.
 
     ```
     export MONGODB_ROOT_PASSWORD=$(kubectl get secret --namespace $NAMESPACE mongodb -o jsonpath="{.data.mongodb-root-password}" | base64 --decode)
@@ -927,7 +927,7 @@ In this section, you are going to deploy an instance of MongoDB to your OpenShif
     echo $MONGODB_PASSWORD
     ```
 
-1. Verify that the internal MongoDB port 27017 within the container is not exposed externally,
+11. Verify that the internal MongoDB port 27017 within the container is not exposed externally,
 
     ```
     $  oc get svc mongodb
