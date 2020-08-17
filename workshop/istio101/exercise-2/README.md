@@ -42,17 +42,9 @@ Once complete, your "Installed Operators" screen will show these operators insta
 
 ## Step 3: Control Plane and Member Roll
 
-Continue to follow the [instructions](https://docs.openshift.com/container-platform/4.3/service_mesh/service_mesh_install/installing-ossm.html#ossm-operatorhub-install_installing-ossm) to create the **Service Mesh Control Plane** and the **Service Mesh Member Roll**. You will need to create a new project named `istio-system`. Accept the default yaml file for Use `guestbook-mesh` in the yaml file for the 
-
-
 In this step, we'll use the OSSM operator to create two new instance - a Control Plane and a Service Mesh Member Roll. we'll install the control plane into the `istio-system` project
 
-Create a new project called `istio-system`
-
-![screenshot](../README_images/create-project.png)
-
-
-After creation, select the `istio-system` project so that it is active. Then selected **Installed Operators -> Red Hat OpenShift Service Mesh**. Note that it may take a few seconds for the installed operators to be copied over to the new project.
+Create a new project called `istio-system`. After creation, select the `istio-system` project so that it is active. Then selected **Installed Operators -> Red Hat OpenShift Service Mesh**. Note that it may take a few seconds for the installed operators to be copied over to the new project.
 
 - Install the Control Plane. No changes from the default template are needed.
 

@@ -10,3 +10,9 @@
     ```
 
     This is the working directory for the workshop. You will use the example `.yaml` files that are located in the `workshop/plans` directory in the following exercises.
+
+2. Create a new project
+
+    ```shell
+    oc new-project guestbook-mesh
+    ```
