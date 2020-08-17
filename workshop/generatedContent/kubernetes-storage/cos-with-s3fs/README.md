@@ -56,21 +56,32 @@ This lab uses the [IBM Cloud Object Storage plugin](https://github.com/IBM/ibmcl
 
 1. Login to [IBM Cloud](https://cloud.ibm.com).
 
-2. Start an instance of `Cloud Shell` by either clicking its icon at the top-right corner of the screen or using the url `https://shell.cloud.ibm.com` in a new browser tab.
+2. Start an instance of the `CognitiveClass.ai` terminal,
 
-    > Important: A `Cloud Shell` session times out after it's idle for more than 60 minutes. When a `Cloud Shell` session times out, as a stateless container, it will lose every work that was performed during the session.
-
-3. In the `Cloud Shell`, login to IBM Cloud from the CLI tool.
+3. In the terminal, set the default WORKDIR,
 
     ```
-    $ ibmcloud login
+    export WORKDIR=$(pwd)
+
+4. login to IBM Cloud from the CLI tool.
+
     ```
+    ibmcloud login
+    ```
+    
     or if using Single Sign On,
+    
     ```
-    $ ibmcloud login -sso
+    ibmcloud login -sso
     ```
 
-4. Retieve your cluster information.
+5. Retieve your cluster information.
+
+    ```
+    ibmcloud ks clusters
+    ```
+
+    outputs, 
 
     ```
     $ ibmcloud ks clusters
@@ -79,13 +90,13 @@ This lab uses the [IBM Cloud Object Storage plugin](https://github.com/IBM/ibmcl
     <yourcluster>    br78vuhd069a00er8s9g    normal    1 day ago      1    Dallas    1.16.10_1533    default    classic
     ```
 
-5. For your convenience, store your IKS cluster name in a environment variable `CLUSTER_NAME` for future reference.
+6. For your convenience, store your IKS cluster name in a environment variable `CLUSTER_NAME` for future reference.
 
     ```
-    $ export CLUSTER_NAME=<your cluster name>
+    export CLUSTER_NAME=<your cluster name>
     ```
 
-6. Connect to your cluster instance.
+7. Connect to your cluster instance.
 
     Go to the IBM Cloud resources page at https://cloud.ibm.com/resources,
     Under `Clusters` find and select your cluster, and load the cluster overview page. There are two ways to retrieve the login command with token:
@@ -104,7 +115,7 @@ This lab uses the [IBM Cloud Object Storage plugin](https://github.com/IBM/ibmcl
     Welcome! See 'oc help' to get started.
     ```
 
-7. Verify the connection to your cluster and your assigned project or namespace.
+8. Verify the connection to your cluster and your assigned project or namespace.
 
     ```
     oc project
@@ -115,41 +126,10 @@ This lab uses the [IBM Cloud Object Storage plugin](https://github.com/IBM/ibmcl
     Using project "<your-project>" on server "https://c100-e.us-south.containers.cloud.ibm.com:30712".
     ```
 
-8. If you do not have a project but see `default` as the project you are using, create a new project, e.g. <username>-project1
+9.  If you do not have a project but see `default` as the project you are using, create a new project, e.g. <username>-project1
 
     ```
     oc new-project <username>-project1
-    ```
-
-### Installing Helm v3
-
-We are installing the `IBM Cloud Object Storage Plugin` via Helm v3 CLI. At the time of writing, by default, Helm v2.16 was installed on the `Cloud Shell`. To install Helm v3, run the following commands,
-
-1. In the `Cloud Shell`, download and unzip Helm v3.2.
-
-    ```
-    wget https://get.helm.sh/helm-v3.2.0-linux-amd64.tar.gz
-    tar -zxvf helm-v3.2.0-linux-amd64.tar.gz
-    ```
-
-2. Make Helm v3 CLI available in your `PATH` environment variable.
-
-    ```
-    echo 'export PATH=$HOME/linux-amd64:$PATH' > .bash_profile
-    source .bash_profile
-    ```
-
-3. Verify Helm v3 installation.
-
-    ```
-    helm version --short
-    ```
-
-    outputs,
-
-    ```
-    $ helm version --short
-    v3.2.0+ge11b7ce
     ```
 
 ### Preparing IBM Cloud Object Storage Service Instance
@@ -173,6 +153,13 @@ We are installing the `IBM Cloud Object Storage Plugin` via Helm v3 CLI. At the 
 4. You also need a resource group at the time of writing, but none was created when you created a new account recently yet,
 
     Check if you already have a resource-group
+
+    ```
+    ibmcloud resource groups
+    ```
+
+    outputs,
+
     ```
     ibmcloud resource groups
     OK
@@ -181,6 +168,12 @@ We are installing the `IBM Cloud Object Storage Plugin` via Helm v3 CLI. At the 
     ```
 
     If you do not have a resource group yet, create one,
+
+    ```
+    ibmcloud resource group-create Default
+    ```
+
+    outputs,
 
     ```
     $ ibmcloud resource group-create Default
@@ -192,11 +185,21 @@ We are installing the `IBM Cloud Object Storage Plugin` via Helm v3 CLI. At the 
 
 5. Create a new Object Storage instance via CLI command, for the lab you can use a `Lite` plan. If you prefer a paid plan, choose `Standard` plan.
 
+    Set environment variables,
+
     ```
     COS_NAME=<username>-cos-1
+    ```
+
+    and
+
+    ```
     COS_PLAN=Lite
     RESOURCEGROUP=Default
-    
+    ```
+
+    Then create the Cloud Object Instance,
+
     ```
     ibmcloud resource service-instance-create $COS_NAME cloud-object-storage $COS_PLAN global -g $RESOURCEGROUP
     ```
@@ -265,23 +268,29 @@ We are installing the `IBM Cloud Object Storage Plugin` via Helm v3 CLI. At the 
 
     ![](../.gitbook/images/cos-03.png)
 
-1. List the created credentials,
+17. List the created credentials,
 
     ```
     ibmcloud resource service-key $COS_NAME-credentials
     ```
 
-17. For your convenience, in the `Cloud Shell` store information in environment variables, make sure to store the Object Storage service name in `COS_NAME` and the credentials apikey in `COS_APIKEY`. Store each environment variable in cloud shell sessions for both accounts if you are using both your personal account and the pre-created account. 
+18. For your convenience, in the `Cloud Shell` store information in environment variables, make sure to store the Object Storage service name in `COS_NAME` and the credentials apikey in `COS_APIKEY`. Store each environment variable in cloud shell sessions for both accounts if you are using both your personal account and the pre-created account. 
 
 In the `Cloud Shell`, 
 
     ```
-    $ export COS_APIKEY=H4pWU7tKDIA0D95xQrDPmjwvA5JB4CuHXbCAn6I6bg5H
+    export COS_APIKEY=<cos-apikey>
     ```
 
     > Note: replace the example values with your own! 
 
 1.  Retrieve `GUID` of your `IBM Cloud Object Storage` service instance. Note, that you should open a separate session in the cloud shell and be logged in to your own personal account. You have to be logged in to the account where the COS instance was created.
+
+    ```
+    ibmcloud resource service-instance $COS_NAME | grep GUID
+    ```
+
+    outputs,
 
     ```
     $ ibmcloud resource service-instance $COS_NAME | grep GUID
@@ -292,7 +301,7 @@ In the `Cloud Shell`,
 2.  For your convenience, store information in environment variable `COS_GUID`.
 
     ```
-    $ export COS_GUID=fef2d369-5f88-4dcc-bbf1-9afffcd9ccc7
+    export COS_GUID=<cos-GUID>
     ```
 
     > Note: replace the example value with your own GUID.
@@ -385,11 +394,7 @@ Before using the `IBM Cloud Object Storage Plugin`, configuration changes are re
 
 1. Make sure the `provisioner-sa.yaml` file is present and configure it to access the COS service using the COS service credentials secret `cos-write-access` that you created in the previous section.
 
-- Open file `provisioner-sa.yaml` in a editor.
-
-    ```
-    vi provisioner-sa.yaml
-    ```
+- Open file `provisioner-sa.yaml` from the `ibm-object-storage-plugin/templates` directory in the Theia editor.
 
 - Search for content `ibmcloud-object-storage-secret-reader` in the file. To move to the right section in the file, in the `vi` editor,
     - Type colon `:`
@@ -421,10 +426,10 @@ Before using the `IBM Cloud Object Storage Plugin`, configuration changes are re
 
 Now, install the configured storage classes for `IBM Cloud Object Storage`,
 
-1. In the `Cloud Shell`, navigate back to the user root folder.
+1. In the terminal, navigate back to the user root folder.
 
     ```
-    cd $HOME
+    cd $WORKDIR
     ```
 
 2. Install the configured storage classes for `IBM Cloud Object Storage`, which will use the edited template file.
@@ -490,8 +495,9 @@ Now, install the configured storage classes for `IBM Cloud Object Storage`,
     ```
     $ oc get pods -n kube-system -o wide | grep object
 
-    ibmcloud-object-storage-driver-jwbcw                  1/1     Running   0          43h    10.185.199.31    10.185.199.31   <none>           <none>
-    ibmcloud-object-storage-plugin-654fc7cd86-kcs8n       1/1     Running   0          43h    172.30.194.209   10.185.199.31   <none>           <none>
+    ibmcloud-object-storage-driver-p4ljp             0/1     Running   0          32s     10.169.231.148   10.169.231.148   <none>           <none>
+    ibmcloud-object-storage-driver-zqb4h             0/1     Running   0          32s     10.169.231.153   10.169.231.153   <none>           <none>
+    ibmcloud-object-storage-plugin-fbb867887-msqcg   0/1     Running   0          32s     172.30.136.24    10.169.231.153   <none>           <none>
     ```
 
     If the pods are not `READY` and indicate `0/1` then wait and re-run the command until the `READY` state says `1/1`.
@@ -607,6 +613,13 @@ Data in the `IBM Cloud Object Storage` is stored and organized in so-called `buc
     This will list your default region, e.g. `us-south` in the example above.
 
     To list your bucket's location use
+
+    ```
+    ibmcloud cos get-bucket-location --bucket $COS_BUCKET
+    ```
+
+    outputs,
+
     ```
     $ ibmcloud cos get-bucket-location --bucket $COS_BUCKET
     OK
@@ -686,11 +699,7 @@ spec:
 ```
     **Note**: indentation in YAML is important. If the PVC status remains `Pending`, the two usual suspects will be the `secret` with its credentials and the indentation in the YAML of the PVC.
 
-3. Edit the file and set the right values if changes are still needed, e.g. the `ibm.io/bucket` should be set to the value defined in `echo $COS_BUCKET` and change the namespace value to your personal project name,
-
-    ```
-    vi my-iks-pvc.yaml
-    ```
+3. In `Theia` the integrated browser IDE, open the file `my-iks-pvc.yaml` and set the right values if changes are still needed, e.g. the `ibm.io/bucket` should be set to the value defined in `echo $COS_BUCKET` and change the namespace value to your personal project name `oc project`,
 
 4. Create a `PersistentVolumeClaim`.
 
@@ -774,10 +783,10 @@ In this section, you are going to deploy an instance of MongoDB to your OpenShif
     Update Complete. ⎈ Happy Helming!⎈
     ```
 
-1. Set a namespace environment variable,
+1. Set a namespace environment variable, `oc project`,
 
     ```
-    export NAMESPACE=<username>-project1
+    export NAMESPACE=<your project>
     ```
 
 2. Install MongoDB using helm with parameters, the flag `persistence.enabled=true` will enable storing your data to a PersistentVolume.
