@@ -26,14 +26,12 @@
 
 ### Day 2
 
-* [Lab: Istio 101](generatedContent/istio101/README.md)
-    * [Excercise - 1](generatedContent/istio101/exercise-1/README.md)
-    * [Excercise - 2](generatedContent/istio101/exercise-2/README.md)
-    * [Excercise - 3](generatedContent/istio101/exercise-3/README.md)
-    * [Excercise - 4](generatedContent/istio101/exercise-4/README.md)
-    * [Excercise - 5](generatedContent/istio101/exercise-5/README.md)
-    * [Excercise - 6](generatedContent/istio101/exercise-6/README.md)
-    * [Excercise - 7](generatedContent/istio101/exercise-7/README.md)
+* [Lab: Istio 101](istio101/README.md)
+    * [Excercise - 0](istio101/setup.md)
+    * [Excercise - 1](istio101/exercise-2/README.md)
+    * [Excercise - 2](istio101/exercise-3/README.md)
+    * [Excercise - 3](istio101/exercise-5/README.md)
+    * [Excercise - 4](istio101/exercise-6/README.md)
 
 * Lab: OpenShift Storage
     * [Excercise - 1](generatedContent/kubernetes-storage/cos-with-s3fs/README.md)
