@@ -54,7 +54,7 @@ The OpenShift Bootcamp consists of:
 | - | - | - | - |
 | 15 mins | Welcome | - | Remko |
 | 30 mins | Lecture: Overview of Istio | Technical Overview of Istio | |
-| 45 mins | [Lab: Istio 201](generatedContent/istio101/README.md) | Istio Labs | |
+| 45 mins | [Lab: Istio 201](istio101/README.md) | Istio Labs | |
 | 15 mins | BREAK | | |
 | 30 mins | Lecture: Overview of Kubernetes Storage | Technical Overview of Storage on Kubernetes | Remko |
 | 45 mins | [Lab: Secure Object Storage on OpenShift](generatedContent/kubernetes-storage/README.md) | Secure Storage Lab using Cloud Object Storage and S3FS-Fuse | Remko |
