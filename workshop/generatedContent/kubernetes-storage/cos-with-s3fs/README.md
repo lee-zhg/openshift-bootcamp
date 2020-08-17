@@ -142,7 +142,7 @@ This lab uses the [IBM Cloud Object Storage plugin](https://github.com/IBM/ibmcl
 
 1. If you DO NOT have an existing `IBM Cloud Object Storage` service instance or prefer to create a new instance for this exercise, go to https://cloud.ibm.com/catalog/services/cloud-object-storage and create a Lite plan of Cloud Object Storage for free. You can only have 1 single free Lite instance per account.
 
-2. **Note**: if you were permissioned and are using a pre-created cluster with your IBM Id and Labkey, that you are now logged into a different account than your personal account, because the permissioned cluster was created on a different account . On this other account you do not have permissions to create new services, so you have to switch to your personal account first before you create the new service.
+2. **Note**: SWITCH TO YOUR PERSONAL ACCOUNT. If you were permissioned and are using a pre-created cluster with your IBM Id and Labkey, that you are now logged into a different account than your personal account, because the permissioned cluster was created on a different account . On this other account you do not have permissions to create new services, so you have to switch to your personal account first before you create the new service.
 
     ![IBMCloud Switch Accounts](../.gitbook/images/ibmcloud-switch-accounts.png)
 
@@ -230,7 +230,7 @@ This lab uses the [IBM Cloud Object Storage plugin](https://github.com/IBM/ibmcl
 
 6. Now you need to add credentials. 
 
-7. You can do this from the CLI,
+7. You can do this from the CLI, from your personal cloud account, click the Cloud Shell icon.
 
     ```
     ibmcloud resource service-key-create $COS_NAME-credentials Writer --instance-name $COS_NAME --parameters '{"HMAC":true}'
@@ -244,7 +244,7 @@ This lab uses the [IBM Cloud Object Storage plugin](https://github.com/IBM/ibmcl
 
 8. Or to create credentials via the web UI instead, in a browser, navigate to `https://cloud.ibm.com/resources` which shows a list of your services providioned in your cloud account.
 
-9. Expand the `Storage` section. 
+9.  Expand the `Storage` section. 
 
 10. Locate and select your `IBM Cloud Object Storage` service instance.
 
@@ -752,6 +752,9 @@ spec:
 
 You're now ready to persistly store data on the IBM Cloud Object Storage within your containers in your cluster.
 
+
+## Optional: Add Storage to MongoDB
+
 ### Deploy MongoDB to Cluster and Persist its Datastore in IBM Cloud Object Storage
 
 In this section, you are going to deploy an instance of MongoDB to your OpenShift cluster and persistly store data on the IBM Cloud Object Storage.
@@ -789,30 +792,50 @@ In this section, you are going to deploy an instance of MongoDB to your OpenShif
     export NAMESPACE=<your project>
     ```
 
-2. Install MongoDB using helm with parameters, the flag `persistence.enabled=true` will enable storing your data to a PersistentVolume.
+1. Install MongoDB using helm with parameters, the flag `persistence.enabled=true` will enable storing your data to a PersistentVolume.
 
     ```
-    oc get pod -o jsonpath='{range .items[*]}{@.metadata.name}{" runAsUser: "}{@.spec.containers[*].securityContext.runAsUser}{" fsGroup: "}{@.spec.securityContext.fsGroup}{" seLinuxOptions: "}{@.spec.securityContext.seLinuxOptions.level}{"\n"}{end}'
+    oc get project remkohdev-project1 -o yaml
+    ```
+
+    outputs
+
+    ```
+    $ oc get project remkohdev-project1 -o yaml
+    apiVersion: project.openshift.io/v1
+    kind: Project
+    metadata:
+    annotations:
+        openshift.io/description: ""
+        openshift.io/display-name: ""
+        openshift.io/requester: IAM#remko@remkoh.dev
+        openshift.io/sa.scc.mcs: s0:c33,c2
+        openshift.io/sa.scc.supplemental-groups: 1001060000/10000
+        openshift.io/sa.scc.uid-range: 1001060000/10000
+    creationTimestamp: "2020-08-17T02:43:26Z"
+    name: remkohdev-project1
+    resourceVersion: "800946"
+    selfLink: /apis/project.openshift.io/v1/projects/remkohdev-project1
+    uid: b75653cd-effa-4b8f-ab56-c3cfc4ee23f2
+    spec:
+    finalizers:
+    - kubernetes
+    status:
+    phase: Active
+    ```
+
+    Which defines that the `sa.scc.supplemental-groups` allowed are `1001060000/10000`, the `sa.scc.uid-range` for the project is `1001060000/10000` in format M/N, where M is the starting ID and N is the count.
+
+    Using the fsGroup and user ids, deploy the bitnami Helm chart, e.g.
+
+    ```
+    helm install mongodb bitnami/mongodb --set persistence.enabled=true --set persistence.existingClaim=my-iks-pvc --set livenessProbe.initialDelaySeconds=180 --set auth.rootPassword=passw0rd --set auth.username=user1 --set auth.password=passw0rd --set auth.database=mydb --set service.type=ClusterIP --set podSecurityContext.enabled=true,podSecurityContext.fsGroup=1001060000,containerSecurityContext.enabled=true,containerSecurityContext.runAsUser=1001060000
     ```
 
     outputs,
 
-    ```
-    $ oc get pod -o jsonpath='{range .items[*]}{@.metadata.name}{" runAsUser: "}{@.spec.containers[*].securityContext.runAsUser}{" fsGroup: "}{@.spec.securityContext.fsGroup}{" seLinuxOptions: "}{@.spec.securityContext.seLinuxOptions.level}{"\n"}{end}'
-
-    icp-mongodb-0 runAsUser: 1000700000 1000700000 fsGroup: 1000700000 seLinuxOptions: s0:c26,c25
-    ```
-
-    Using the fsGroup and runAsUser ids, deploy the bitnami Helm chart, e.g.
-
-    ```
-    helm install mongodb bitnami/mongodb --set persistence.enabled=true --set persistence.existingClaim=my-iks-pvc --set livenessProbe.initialDelaySeconds=180 --set auth.rootPassword=passw0rd --set auth.username=user1 --set auth.password=passw0rd --set auth.database=mydb --set service.type=ClusterIP --set podSecurityContext.enabled=true,podSecurityContext.fsGroup=1000700000,containerSecurityContext.enabled=true,containerSecurityContext.runAsUser=1000700000
-    ```
-
-    outputs,
-
-    ```
-    $ helm install mongodb bitnami/mongodb --set persistence.enabled=true --set persistence.existingClaim=my-iks-pvc --set livenessProbe.initialDelaySeconds=180 --set auth.rootPassword=passw0rd --set auth.username=user1 --set auth.password=passw0rd --set auth.database=mydb --set service.type=ClusterIP --set podSecurityContext.enabled=true,podSecurityContext.fsGroup=1000700000,containerSecurityContext.enabled=true,containerSecurityContext.runAsUser=1000700000
+    $ ```
+    helm install mongodb bitnami/mongodb --set persistence.enabled=true --set persistence.existingClaim=my-iks-pvc --set livenessProbe.initialDelaySeconds=180 --set auth.rootPassword=passw0rd --set auth.username=user1 --set auth.password=passw0rd --set auth.database=mydb --set service.type=ClusterIP --set podSecurityContext.enabled=true,podSecurityContext.fsGroup=1001060000,containerSecurityContext.enabled=true,containerSecurityContext.runAsUser=1001060000
 
     NAME: mongodb
     LAST DEPLOYED: Sat May 23 21:04:44 2020
@@ -843,18 +866,21 @@ In this section, you are going to deploy an instance of MongoDB to your OpenShif
         kubectl port-forward --namespace <your-namespace> svc/mongodb 27017:27017 & mongo --host 127.0.0.1 --authenticationDatabase admin -p $MONGODB_ROOT_PASSWORD
     ```
 
-3. Note, the service type for MongoDB is set to `ClusterIP` with the Helm parameter `--set service.type=ClusterIP`, so that MongoDB can only be accessed within the cluster.
-
-4. Retrieve and save MongoDB passwords in environment variables.
+    Wait until the mongodb pods are running,
 
     ```
-    export MONGODB_ROOT_PASSWORD=$(kubectl get secret --namespace $NAMESPACE mongodb -o jsonpath="{.data.mongodb-root-password}" | base64 --decode)
-    export MONGODB_PASSWORD=$(kubectl get secret --namespace $NAMESPACE mongodb -o jsonpath="{.data.mongodb-password}" | base64 --decode)
-    echo $MONGODB_ROOT_PASSWORD
-    echo $MONGODB_PASSWORD
+    oc get pod
     ```
 
-5. Verify the MongoDB deployment.
+    outputs,
+
+    ```
+    $ oc get pod
+    NAME                      READY   STATUS    RESTARTS   AGE
+    mongodb-c4b99b975-l2k7n   1/1     Running   0          81s
+    ```
+
+1. Verify the MongoDB deployment.
 
     ```
     $ oc get deployment
@@ -865,7 +891,7 @@ In this section, you are going to deploy an instance of MongoDB to your OpenShif
 
     > Note: It may take several minutes until the deployment is completed and the container initialized, wait till the `READY` state is `1/1`.
 
-6.  Verify that pods are running.
+1. Verify that pods are running.
 
     ```
     $ oc get pod
@@ -876,7 +902,32 @@ In this section, you are going to deploy an instance of MongoDB to your OpenShif
 
     > Note: It may take a few minutes until the deployment is completed and pod turns to `Running` state.
 
-7. Verify that the internal MongoDB port 27017 within the container is not exposed externally,
+1. Knowing the pod identifier now, you can verify the assigned fsGroup and uid of the SCC.
+
+    ```
+    oc get pod -o jsonpath='{range .items[*]}{@.metadata.name}{" runAsUser: "}{@.spec.containers[*].securityContext.runAsUser}{" fsGroup: "}{@.spec.securityContext.fsGroup}{" seLinuxOptions: "}{@.spec.securityContext.seLinuxOptions.level}{"\n"}{end}'
+    ```
+
+    outputs,
+
+    ```
+    $ oc get pod -o jsonpath='{range .items[*]}{@.metadata.name}{" runAsUser: "}{@.spec.containers[*].securityContext.runAsUser}{" fsGroup: "}{@.spec.securityContext.fsGroup}{" seLinuxOptions: "}{@.spec.securityContext.seLinuxOptions.level}{"\n"}{end}'
+
+    mongodb-c4b99b975-l2k7n runAsUser: 1001060000 fsGroup: 1001060000 seLinuxOptions: s0:c33,c2
+    ```
+
+1. Note, the service type for MongoDB is set to `ClusterIP` with the Helm parameter `--set service.type=ClusterIP`, so that MongoDB can only be accessed within the cluster.
+
+1. Retrieve and save MongoDB passwords in environment variables.
+
+    ```
+    export MONGODB_ROOT_PASSWORD=$(kubectl get secret --namespace $NAMESPACE mongodb -o jsonpath="{.data.mongodb-root-password}" | base64 --decode)
+    export MONGODB_PASSWORD=$(kubectl get secret --namespace $NAMESPACE mongodb -o jsonpath="{.data.mongodb-password}" | base64 --decode)
+    echo $MONGODB_ROOT_PASSWORD
+    echo $MONGODB_PASSWORD
+    ```
+
+1. Verify that the internal MongoDB port 27017 within the container is not exposed externally,
 
     ```
     $  oc get svc mongodb
@@ -888,16 +939,22 @@ In this section, you are going to deploy an instance of MongoDB to your OpenShif
 
 To verify MongoDB deployment,
 
-1. In `Cloud Shell`, retrieve pod ID.
+1. In the terminal, retrieve pod ID.
+
+    ```
+    oc get pod
+    ```
+
+    outputs,
 
     ```
     $ oc get pod
 
-    NAME    READY    STATUS    RESTARTS    AGE
-    mongodb-9f76c9485-sjtqx    1/1    Running    0    5m40s
+    NAME                      READY   STATUS    RESTARTS   AGE
+    mongodb-c4b99b975-l2k7n   1/1     Running   0          5m44s
     ```
 
-2. Start an interactive terminal to the pod, you need to use your own unique pod name with the hashes.
+1. Start an interactive terminal to the pod, you need to use your own unique pod name with the hashes.
 
     ```
     oc exec -it <your pod name> bash
@@ -972,7 +1029,7 @@ To verify MongoDB deployment,
     }
     ```
 
-9. Retrieve the data entry in the MongoDB.
+9.  Retrieve the data entry in the MongoDB.
 
     ```
     > db.customer.find({ lastName: "Smith" })
@@ -980,7 +1037,7 @@ To verify MongoDB deployment,
     { "_id" : ObjectId("5ed1e4319bdb52022d624bdf"), "firstName" : "John", "lastName" : "Smith" }
     ```
 
-10. Type `exit` twice to back to the `Cloud Shell`.
+10. Type `exit` twice to back to the terminal.
 
 11. Your mongodb is now saving values, and if your Cloud Object Storage and bucket were configured correctly, your customer information is now securely stored.
 
