@@ -318,10 +318,9 @@ Apply the Operator’s CSV manifest to the specified namespace in the cluster:
 oc create -f deploy/olm-catalog/guestbook-operator-project/manifests/guestbook-operator-project.clusterserviceversion.yaml
 ```
 
-Create the role, role binding, and service account to grant resource permissions to the Operator, and the Custom Resource Definition (CRD) to create the Guestbook type that the Operator manages:
+Create the role, role binding, and service account to grant resource permissions to the Operator to create the Guestbook type that the Operator manages:
 
 ```
-oc create -f deploy/crds/helm.operator-sdk_guestbooks_crd.yaml
 oc create -f deploy/service_account.yaml
 oc create -f deploy/role.yaml
 oc create -f deploy/role_binding.yaml
