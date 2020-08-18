@@ -7,9 +7,14 @@ THIS FILE CONTAINS ALL THE SUMMARY.MDs OF THE GENERATED CONTENT PREFIXED WITH RI
 
 # Summary
 
-### Getting Started
+### Install
 
-* [Pre-work](generatedContent/workshop-setup/pre-work/README.md)
+1. [Sign up for a new IBM Cloud](generatedContent/workshop-setup/pre-work/NEWACCOUNT.md)
+1. [Connect to RedHat OpenShift Kubernetes Service (ROKS)](generatedContent/workshop-setup/pre-work/ROKS.md)
+1. [Access a shell at CognitiveClass.ai](generatedContent/workshop-setup/pre-work/COGNITIVECLASS.md)
+1. [Install CLI Tools](generatedContent/workshop-setup/pre-work/TOOLS-CLI.md)
+1. [Install Jenkins on OpenShift 4.3](generatedContent/workshop-setup/jenkins/SETUP_OCP43.md)
+1. [Install Jenkins on OpenShift 3.11](generatedContent/workshop-setup/jenkins/SETUP_OCP311.md)
 
 ### Workshop Resources
 
