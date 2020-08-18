@@ -6,6 +6,7 @@
 * [2. Client CLI](generatedContent/workshop-setup/pre-work/COGNITIVECLASS.md)
 * [3. Grant Cluster](generatedContent/workshop-setup/pre-work/GRANTCLUSTER.md)
 * [4. OpenShift](generatedContent/workshop-setup/pre-work/ROKS.md)
+* [5. Jenkins](generatedContent/workshop-setup/jenkins/SETUP_OCP43.md)
 
 ### Day 1
  
@@ -45,9 +46,8 @@
 * [Lab: Source-to-Image (S2I)](generatedContent/s2i-open-liberty-workshop/README.md)
 
 * [Lab: Jenkins to OpenShift Pipelines](generatedContent/openshift-builds-101/pipeline-build/README.md)
-    * [Excercise - 1](generatedContent/openshift-builds-101/pipeline-build/lab-00/README.md)
-    * [Excercise - 2](generatedContent/openshift-builds-101/pipeline-build/lab-01/README.md)
-    * [Excercise - 3](generatedContent/openshift-builds-101/pipeline-build/lab-02/README.md)
+    * [Excercise - 1](generatedContent/openshift-builds-101/pipeline-build/lab-01/README.md)
+    * [Excercise - 2](generatedContent/openshift-builds-101/pipeline-build/lab-02/README.md)
 
 
 * Demo: Multi-Cloud Manager
